@@ -1,0 +1,21 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<section id="main">
+  <a href="./#/raceList"></a>
+  <div class="display">
+    <div class="table-responsive-vertical shadow-z-1"> 
+      <table id="table" class="table table-mc-red table-bordered">
+        <thead>
+          <tr><th colspan="5">Get the Name of the Race here Meaningfully</th></tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="competitor in competitors">
+            <td>{{competitor.position}}</td>
+            <td>{{competitor.competitor}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

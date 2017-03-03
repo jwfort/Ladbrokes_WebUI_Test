@@ -1,0 +1,24 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<div class="display">
+  <div class="table-responsive-vertical shadow-z-1"> 
+    <table id="table" class="table table-hover table-mc-red table-striped table-bordered">
+      <thead>
+        <tr><th colspan="4">Next Races</th></tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="race in raceList track by $index">
+          <td>{{$index + 1}}</td>
+          <td>
+            <a href="#/raceList/{{race.Race.raceID}}">
+              {{race.Race.meeting}}&nbsp;{{race.Race.raceNo}}
+            </a>
+          </td>
+          <td>{{race.type}}</td>
+          <td>{{race.startTime}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
