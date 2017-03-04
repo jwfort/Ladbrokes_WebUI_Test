@@ -16,7 +16,7 @@ angular.module('UpcomingRacesApp.services', []).
         url: 'http://localhost/Ladbrokes_WebUI_Test/api.php?action=get_race_information',
         params: {id: raceID}
       })
-    },
+    }/*,
 
     myRESTAPI.getRace = function(raceID) {
       return $http({
@@ -24,7 +24,7 @@ angular.module('UpcomingRacesApp.services', []).
         url: 'http://localhost/Ladbrokes_WebUI_Test/api.php?action=get_race',
         params: {id: raceID}
       })      
-    }
+    }*/
 
     return myRESTAPI;
   });

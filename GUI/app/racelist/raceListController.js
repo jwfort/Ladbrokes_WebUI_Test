@@ -1,7 +1,19 @@
-angular.module('UpcomingRacesApp.controllers', []).
+angular.module('UpcomingRacesApp.controllers', ['timer']).
 /* RaceList Controller -> Used for main view*/
 controller('raceListController', function($scope, myRESTAPIservice) {
     $scope.raceList = [];
+
+    $scope.timerRunning = true;
+
+    $scope.startTimer = function (){
+        $scope.$broadcast('timer-start');
+        $scope.timerRunning = true;
+    };
+
+    $scope.stopTimer = function (){
+        $scope.$broadcast('timer-stop');
+        $scope.timerRunning = false;
+    };
 
     myRESTAPIservice.getRaces().success(function (data) {
       $scope.raceList = data;
@@ -16,10 +28,9 @@ controller('raceController', function($scope, $routeParams, myRESTAPIservice) {
 
 
   myRESTAPIservice.getRaceInfo($scope.id).success(function (response) {
-    console.log(response);
     $scope.competitors = response.contestants;
   });
-  myRESTAPIservice.getRace().success(function (data) {
+  myRESTAPIservice.getRaces().success(function (data) {
     console.log(data);
     $scope.race = data;
   });

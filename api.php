@@ -38,21 +38,24 @@ function get_races()
 }
 
 function get_race($id) {
-	$race_list_full = array(array("Race" => array("meeting" => "BNE", "raceNo" => "1", "raceID" => "1"), "startTime" => "10:15", "type" => "Thoroughbread"), 
-  	array("Race" => array("meeting" => "SYD", "raceNo" => "1", "raceID" => "2"), "startTime" => "10:35", "type" => "Greyhound"),
-	array("Race" => array("meeting" => "BNE", "raceNo" => "2", "raceID" => "3"), "startTime" => "10:55", "type" => "Harness"),
-	array("Race" => array("meeting" => "MEL", "raceNo" => "1", "raceID" => "4"), "startTime" => "11:15", "type" => "Harness"),
-	array("Race" => array("meeting" => "BNE", "raceNo" => "3", "raceID" => "5"), "startTime" => "11:35", "type" => "Greyhound"),
-	array("Race" => array("meeting" => "SYD", "raceNo" => "2", "raceID" => "6"), "startTime" => "12:05", "type" => "Thoroughbread"));
-
+	$race_list_full = array(
+    array("Race" => array("meeting" => "BNE", "raceNo" => "1", "raceID" => "1"), "startTime" => "10:15", "type" => "Thoroughbread"), 
+    array("Race" => array("meeting" => "SYD", "raceNo" => "1", "raceID" => "2"), "startTime" => "10:35", "type" => "Greyhound"),
+  	array("Race" => array("meeting" => "BNE", "raceNo" => "2", "raceID" => "3"), "startTime" => "10:55", "type" => "Harness"),
+  	array("Race" => array("meeting" => "MEL", "raceNo" => "1", "raceID" => "4"), "startTime" => "11:15", "type" => "Harness"),
+  	array("Race" => array("meeting" => "BNE", "raceNo" => "3", "raceID" => "5"), "startTime" => "11:35", "type" => "Greyhound"),
+  	array("Race" => array("meeting" => "SYD", "raceNo" => "2", "raceID" => "6"), "startTime" => "12:05", "type" => "Thoroughbread")
+  );
+/*
 	foreach ($race_list_full as $race) {
-		foreach ($race as $raceID) { 
-			if ($raceID["Race"]["raceID"] == $id) {
-				return $race_list_full["Race"];
-			}
-		};
-	};
+		if ($race["Race"]["raceID"] = $id) {
+			return $race;
+		}
+    $race_info = array(race => $race);
+  }*/
+  return $race_info_full;
 } 
+
 
 $possible_url = array("get_race_information", "get_races");
 
