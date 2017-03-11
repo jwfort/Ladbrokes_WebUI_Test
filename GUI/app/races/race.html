@@ -5,9 +5,33 @@
   <a href="./#/raceList"></a>
   <div class="display">
     <div class="table-responsive-vertical shadow-z-1"> 
-      <table id="table" class="table table-mc-red table-bordered">
-        <thead>
-          <tr><th colspan="5">Get the Name of the Race here Meaningfully</th></tr>
+      <table id="table" class="table table-hover table-mc-red table-striped table-bordered">
+        <thead ng->
+          <tr><th colspan="8">
+            <span align='left'>
+              <!-- With more time this formatting wouldnt be so atrocious -->
+              <!-- But given all things, well, it gets the job done -->
+              {{race.Race.meeting}}&nbsp;{{race.Race.raceNo}}
+              &emsp;&emsp;&emsp;&emsp;&emsp;{{race.type}}
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            </span>
+            <span>
+              Time to bet:
+              <timer countdown="race.startTimeMS" interval="1000" finish-callback="callbackTimer.raceStarted($index)">
+                {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.
+              </timer> 
+            </span>
+          </th>
+        </tr>
+        <tr>
+          <th> 
+            Position 
+          </th>
+          <th>
+            Competitor Name
+          </th>
+        </tr>
         </thead>
         <tbody>
           <tr ng-repeat="competitor in competitors">

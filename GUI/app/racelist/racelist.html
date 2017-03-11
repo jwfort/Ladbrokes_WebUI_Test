@@ -1,26 +1,46 @@
 <head>
   <link rel="stylesheet" type="text/css" href="app.css">
 </head>
+<!-- This is all self explanatory, use Angular to get the right variables in the right spot -->
 <div class="display">
   <div class="table-responsive-vertical shadow-z-1"> 
     <table id="table" class="table table-hover table-mc-red table-striped table-bordered">
       <thead>
-        <tr><th colspan="4">Next Races</th></tr>
+        <tr>
+            <th colspan="4">
+              Next Races 
+            </th>
+          </tr>
+          <tr>
+            <th>
+              Index
+            </th>
+            <th>
+              Race
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Time to Bet
+            </th>
+        </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="race in raceList track by $index">
+        <!-- Big thing missing in the line below is a filter/order. We are assuming they are sorted at this point-->
+        <!-- Probably, I would try and have them returned by the API sorted, or sort immediately after, but we should be safe and add this here -->
+        <tr ng-repeat="race in racesToDisplay track by $index">
           <td>{{$index + 1}}</td>
           <td>
-            <a href="#/raceList/{{race.Race.raceID}}">
+            <a href="#/raceList/{{race.index}}">
               {{race.Race.meeting}}&nbsp;{{race.Race.raceNo}}
             </a>
           </td>
           <td>{{race.type}}</td>
           <td>
-            <h1>AngularJS - Single Timer Example</h1>
-            <h3><timer/></h3>
-            <button ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
-            <button ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
+            <timer countdown="race.startTimeMS" interval="1000" finish-callback="callbackTimer.raceStarted($index)">
+              {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.
+            </timer> 
           </td>
         </tr>
       </tbody>

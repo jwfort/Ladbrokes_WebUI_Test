@@ -4,7 +4,8 @@
 angular.module('UpcomingRacesApp', [
 	'ngRoute',  
 	'UpcomingRacesApp.controllers',
-	'UpcomingRacesApp.services'
+	'UpcomingRacesApp.apiServices',
+	'UpcomingRacesApp.datastorageServices'
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
