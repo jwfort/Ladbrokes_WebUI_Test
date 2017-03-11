@@ -18,6 +18,8 @@ This is an app developed as the technical test for a position at Ladbrokes
  ```
  Navigate to Localhost and node should take care of the rest
 
+N.B: You *Will* need to enable Cross-Origin-Resource-Sharing, as required based upon how you host the services, but if you follow the instuctions above then you will need it.
+
  Notes:
  - Need to actually use a database and not just JSON placeholders. I was picking up PHP essentially as I went and ran out of time to implement that side of the API
  
